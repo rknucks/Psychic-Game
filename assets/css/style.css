@@ -1,0 +1,31 @@
+
+body {
+ background-image: url("https://www.victorialynnweston.com/wp-content/uploads/2015/02/psychic-mind.jpg");
+ background-repeat: no-repeat;
+ 
+
+}
+
+
+#psychic {
+    width: 250px;
+    height: 250px;
+    background: lightblue;
+    border: 2px solid orange;
+    margin-left: 15%;
+    margin-top: 18px;
+    text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    Color: green;
+}
+header {
+    margin-left: 15%;
+    background: yellow;
+    width: 200px;
+    margin-top: 18px;
+    text-align: center;
+
+}
