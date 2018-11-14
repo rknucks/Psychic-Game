@@ -2,7 +2,7 @@
 
 
 var choices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var userGuess = null;
+//var userGuess = null;
 var guessesLeft = 9;
 var guessesMade = [];
 var wins = 0;
