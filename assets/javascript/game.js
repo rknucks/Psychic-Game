@@ -1,47 +1,52 @@
 
 
-var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
-
+var choices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+//var userGuess = null;
+var guessesLeft = 9;
+var guessesMade = [];
 var wins = 0;
 var losses = 0;
-var numofGuesses = 9;
-var guessChoice = [];
 
+var directionsText = document.getElementById("directions-text");
+var winsText = document.getElementById("wins-text");
+var lossesText = document.getElementById("losses-text");
+var guessesLeftText = document.getElementById("guessesLeft-text");
+var guessesMadeText = document.getElementById("guessesMade-text");
+
+
+// - create a function
 document.onkeyup = function(event) {
 
-    var userGuess = event.key;
-
-    var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
-    console.log(computerGuess)
-
-		 	var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
-		 	
-
-			if (options.indexOf(userGuess) > -1) {
-
-				if (userGuess === computerGuess) {
-					wins++;
-					numGuesses = 9;
-					guessChoices = [];
-				}
-
-				if (userGuess != computerGuess) {
-					numGuesses --;
-					guessChoices.push(userGuess);
-				}
-
-				if (numGuesses === 0) {
-
-				numGuesses = 9;
-				losses ++;
-				guessChoices = [];
-
-				
-			}
-
-			
-			
-			}
-		};
-
+	// choice is stored in a variable.
+	var computerGuess = choices[Math.floor(Math.random()*choices.length)];
+	var userGuess = event.key;
+	console.log("The Computer's Choice " + computerGuess);
+	guessesMade.push(userGuess);
+	console.log("your guesses are: " + guessesMade)
 	
+
+	if (userGuess === computerGuess) {
+		alert("Nailed it!")
+		wins++
+		guessesLeft = 9;
+		
+	} else {
+		alert("That's not it.");
+		losses++;
+		guessesLeft --;
+		alert("Try again");
+	}
+
+	if (guessesLeft = 0) {
+			alert("Sorry, all out of guesses.  Game over.  Try again?");
+			guessesLeft = 9;
+			guessesMade = [];
+		
+	}	
+			 // Display  wins and losses
+       
+        winsText.textContent = "wins: " + wins;
+        lossesText.textContent = "losses: " + losses;
+		guessesMadeText.textContent = "your guesses so far: " + guessesMade;
+		guessesLeftText.textContent = "Number of guesses remaining: " + guessesLeft;
+};

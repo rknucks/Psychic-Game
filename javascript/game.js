@@ -29,22 +29,27 @@ document.onkeyup = function(event) {
 	if (userGuess === computerGuess) {
 		alert("Nailed it!")
 		wins++
+		guessesLeft = 9;
+		guessesMade.length = 0;
 		
 	} else {
 		alert("That's not it.");
-		losses++;
+		guessesLeft --;
 		alert("Try again");
 	}
 
-	if (userGuess != computerGuess) {
-		guessesLeft--;
-		
-
-	}	else {
-			guessesLeft = 9;
+	
+		if 
+			(guessesLeft == 0) {
+            losses++;
+            alert("Sorry, you are out of guesses. Game over. Try again.");
+            guessesLeft = 9;
+			guessesMade.length = 0;
+			
 		}
 			
-
+	
+	
 
 
 		
